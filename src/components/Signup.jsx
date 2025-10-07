@@ -16,7 +16,7 @@ const Signup = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const { session, signupnewuser } = userAuth();
+  const { signupnewuser } = userAuth();
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
@@ -30,7 +30,14 @@ const Signup = () => {
       if (result.success) {
         navigate('/');
       } else {
-        setError(result.error || 'Signup failed.');
+        if (result.error.includes('User already registered')) {
+          setError('User already exists. Redirecting to LogIn...');
+          setTimeout(() => {
+            navigate('/login');
+          }, 2000);
+        } else {
+          setError(result.error || 'Signup failed.');
+        }
       }
     } catch (err) {
       setError('An unexpected error occurred.');

@@ -16,7 +16,7 @@ export const Signin = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const { session, signinuser } = userAuth();
+  const { signinuser } = userAuth();
   const navigate = useNavigate();
 
   const handleSignin = async (e) => {
@@ -25,7 +25,7 @@ export const Signin = () => {
     setError('');
 
     try {
-      const result = await signinuser({email, password});
+      const result = await signinuser({ email, password });
 
       if (result.success) {
         navigate('/');
@@ -42,7 +42,7 @@ export const Signin = () => {
   return (
     <div className="main-signup">
       <div className="signup">
-        <h2 className="title">SignIn</h2>
+        <h2 className="title">Login</h2>
 
         {/* Error Message */}
         {error && (
@@ -52,7 +52,7 @@ export const Signin = () => {
         )}
 
         <form onSubmit={handleSignin}>
-          <div className="email">
+          <div className="email" style={{ marginBottom: '1rem' }}>
             <label htmlFor="email">Email</label>
             <InputText
               id="email"
@@ -65,7 +65,7 @@ export const Signin = () => {
             />
           </div>
 
-          <div className="password">
+          <div className="password" style={{ marginBottom: '1rem' }}>
             <label htmlFor="password">Password</label>
             <Password
               id="password"
@@ -80,15 +80,21 @@ export const Signin = () => {
           </div>
 
           <Button
-            label={loading ? 'Signing up...' : 'LOGIN'}
-            icon="pi pi-user-plus"
+            label={loading ? 'Logging in...' : 'Login'}
+            icon="pi pi-sign-in"
             className="button"
             type="submit"
             disabled={loading}
           />
+
+          {/* Forgot Password Link */}
+          <div style={{ marginTop: '1rem' }}>
+            <a href="/forgot-password" style={{ color: '#007ad9', textDecoration: 'underline' }}>
+              Forgot Password?
+            </a>
+          </div>
         </form>
       </div>
     </div>
   );
 };
-
