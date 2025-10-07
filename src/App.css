@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,72 @@
 
 .read-the-docs {
   color: #888;
+} */
+.header{
+  width:100%;
+  position:fixed;
+  top:0px;
+  padding:1%;
+  
+}
+.account
+{
+  width:200px;
+  padding:1%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.name
+{
+  font-weight: 600;
+  font-family:cursive;
+}
+.main-signup{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;overflow-y: auto;
+}
+.signup{
+  background-color: rgb(223, 217, 217);
+  height: 45%;
+  max-height: 270px;
+  max-width:400px;
+  width:100%;
+  text-align: center;
+  border-radius: 20px;
+  color:rgba(44, 44, 44, 0.874);
+  margin:3%;
+  
+}
+.email,.password{
+  display:flex;
+  justify-content: space-between;
+  margin:10px;
+   color: rgb(0, 0, 0);
+}
+.email input
+{
+  width:70%;
+  margin:5px;
+  
+  }
+.button{
+  background-color: rgba(66, 85, 225, 0.873);
+}
+.password input{
+  width:97%;
+  margin:1%;
+}
+label{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
