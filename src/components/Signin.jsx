@@ -40,8 +40,8 @@ export const Signin = () => {
   };
 
   return (
-    <div className="main-signup">
-      <div className="signup">
+    <div className="main-signin">
+      <div className="signin">
         <h2 className="title">Login</h2>
 
         {/* Error Message */}
@@ -92,6 +92,7 @@ export const Signin = () => {
             <a href="/forgot-password" style={{ color: '#007ad9', textDecoration: 'underline' }}>
               Forgot Password?
             </a>
+            <p>Don't have an account <a href="/Signup" style={{ color: '#007ad9', textDecoration: 'underline' }}>signUp</a></p>
           </div>
         </form>
       </div>

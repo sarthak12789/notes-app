@@ -42,7 +42,7 @@
 } */
 .header{
   width:100%;
-  position:fixed;
+
   top:0px;
   padding:1%;
   
@@ -59,16 +59,16 @@
   font-weight: 600;
   font-family:cursive;
 }
-.main-signup{
+.main-signup,.main-signin{
   display:flex;
   justify-content: center;
   align-items: center;
   height:100vh;overflow-y: auto;
 }
-.signup{
+.signup,.signin{
   background-color: rgb(223, 217, 217);
-  height: 45%;
-  max-height: 270px;
+  height: 96%;
+  max-height: 365px;
   max-width:400px;
   width:100%;
   text-align: center;
@@ -77,34 +77,195 @@
   margin:3%;
   
 }
+.signin{
+  max-height: 430px;
+}
 .email,.password{
   display:flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin:10px;
    color: rgb(0, 0, 0);
+
+
 }
 .email input
 {
-  width:70%;
+  width:95%;
   margin:5px;
   
   }
 .button{
   background-color: rgba(66, 85, 225, 0.873);
 }
-.password input{
-  width:97%;
-  margin:1%;
+
+.password input {
+  margin-left: 2%;
+  box-sizing: border-box; 
+
 }
+
 label{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
+  align-self:flex-start;
+  padding-left:10px;
 }
+
 
 .error-message {
   color: red;
   font-size: 0.9rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+
+#icon{
+  position: sticky;
+  top:10px;
+  margin:10px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.899);
+  padding:10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Positioning the icon */
+
+
+#icon:hover {
+  color: #ebe049;
+}
+
+/* Main wrapper just gives some space around everything */
+.book-icon-wrapper {
+  margin: 1rem 2rem 2rem 2rem; /* add top margin to avoid overlapping with absolute icon */
+}
+
+/* Flex row layout with wrap for cards */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;         /* 💥 THIS enables wrapping */
+  gap: 1rem;
+  margin-top:1%;
+}
+
+/* Individual card */
+.note-card {
+  padding: 1.5rem;
+  background-color: #f3f4f6;
+  border-left: 5px solid #007ad9;
+  border-radius: 4px;
+  width: 300px;            /* fixed width for layout control */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-description {
+  margin: 0;
+  color: #555;
+}
+#delicon{
+ position: relative;
+  bottom:15px;
+}
+
+.editable-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #007ad9;
+  outline: none;
+}
+.delete-icon:hover {
+  background-color: rgba(222, 224, 157, 0.811);
+  border-radius: 20px;
+}
+/* Overlay for modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal content */
+.modal-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 2px solid #007ad9;
+  outline: none;
+  font-weight: bold;
+}
+
+.modal-description {
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  margin-bottom: 1rem;
+  max-height: 500px;
+  min-height: 120px;
+}
+
+.modal-actions {
+  text-align: right;
+}
+
+.modal-actions button {
+  padding: 0.5rem 1rem;
+  background-color: #007ad9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-actions button:hover {
+  background-color: #005fa3;
+}
+.note-card {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  max-width: 300px; /* adjust as needed */
+  box-sizing: border-box;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.card-description {
+  white-space: normal; /* allow wrapping */
+  word-wrap: break-word; /* break long words */
+  overflow-wrap: break-word;
+  max-height: 4.5em; /* optional, limit height to 3 lines */
+  overflow: hidden;
+  text-overflow: ellipsis; /* add ... if overflow */
 }

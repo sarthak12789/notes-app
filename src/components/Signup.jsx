@@ -93,6 +93,7 @@ const Signup = () => {
             type="submit"
             disabled={loading}
           />
+          <p>Already have an account <a href="/login" style={{ color: '#007ad9', textDecoration: 'underline' }}>signIn</a></p>
         </form>
       </div>
     </div>

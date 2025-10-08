@@ -64,3 +64,21 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-icon {
+  font-size: 1.2rem;
+  color: #d11a2a;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.delete-icon:hover {
+  background-color: rgba(209, 26, 42, 0.1);
+}

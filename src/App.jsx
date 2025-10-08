@@ -1,15 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './components/header'
+import './App.css';
+import Navbar from './components/header';
+import { BookIconComponent } from './components/addicon';
+
 function App() {
- 
- return(
-    <div>
-       <Navbar/> 
+  return (
+    <div className="page-wrapper">
+      <Navbar />
+
+      {/* Create Icon positioned 20px below navbar */}
+      <div className="create-icon-container">
+        <BookIconComponent />
+      </div>
     </div>
- );   
+  );
 }
 
-export default App
+export default App;
